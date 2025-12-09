@@ -1,0 +1,152 @@
+/* static/result.css – Final clean & cohesive version (2025-ready) */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+  padding: 3rem 1rem;
+  color: #334155;
+  line-height: 1.6;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  background: linear-gradient(90deg, #5b21b6 0%, #7c3aed 70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glassmorphic table card */
+table {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto 4rem;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow:
+    0 8px 32px rgba(124, 58, 237, 0.12),
+    0 25px 70px rgba(0, 0, 0, 0.08);
+  animation: floatIn 1s ease-out;
+}
+
+thead {
+  background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+th {
+  padding: 1.6rem 1.4rem;
+  text-align: left;
+}
+
+tbody tr {
+  transition: all 0.35s ease;
+}
+
+tbody tr:hover {
+  background: rgba(167, 139, 250, 0.12);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(124, 58, 237, 0.18);
+}
+
+tbody tr:nth-child(even) {
+  background: rgba(250, 245, 255, 0.4);
+}
+
+td {
+  padding: 1.6rem 1.4rem;
+  border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+}
+
+td:first-child {
+  font-weight: 600;
+  color: #4c1d95;
+  font-size: 1.1rem;
+  width: 34%;
+}
+
+td:last-child {
+  color: #1e1b4b;
+  font-size: 1.05rem;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+tbody tr:last-child td:first-child { border-bottom-left-radius: 24px; }
+tbody tr:last-child td:last-child  { border-bottom-right-radius: 24px; }
+
+/* ──────────────────────────────
+   Button Grouped Buttons (Download CSV + Upload Again)
+   ────────────────────────────── */
+.button-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.8rem;
+  flex-wrap: wrap;
+  margin: 2rem auto 1rem;
+}
+
+.btn {
+  padding: 1rem 2.4rem;
+  background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.35);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+}
+
+.btn:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(124, 58, 237, 0.45);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+}
+
+/* Float-in animation */
+@keyframes floatIn {
+  from { opacity: 0; transform: translateY(30px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  h2 { font-size: 2.1rem; margin-bottom: 2.5rem; }
+  table { border-radius: 20px; margin-bottom: 3rem; }
+  th, td { padding: 1.2rem 1rem; }
+  td:first-child { font-size: 1.02rem; }
+
+  .button-group {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .btn {
+    width: 80%;
+    max-width: 360px;
+    text-align: center;
+    padding: 1rem 2rem;
+  }
+}
