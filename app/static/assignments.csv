@@ -1,0 +1,7 @@
+Task,Assigned To
+amit,ec2 and eks compare and analyse the usecases for each
+kenish,"teraform , spin up aws ec2 using a .tf file and more"
+pujan,"github actions , create a deploy file and make it run, ebs and efs , make the cost comparison for 1 year and 10tb data, create script to automate task"
+dipesh,do ci/cd with jenkins and do it well
+ribesh,"jenkins , build a cicd pieline and to the assinged tasks"
+laxman,"create a repository and push the python code there, cloudformation, create a iac and upload that in github, create s3 bucket and do it well"

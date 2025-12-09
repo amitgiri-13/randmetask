@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Assignment</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='upload.css') }}">
+</head>
+<body>
+    <h2>Add Members and Tasks</h2>
+    <form action="/assign" method="post" enctype="multipart/form-data">
+        <label>Members File:</label>
+        <input type="file" name="members_file" required><br><br>
+
+        <label>Tasks File:</label>
+        <input type="file" name="tasks_file" required><br><br>
+
+        <button type="submit">Assign Tasks</button>
+    </form>
+</body>
+</html>

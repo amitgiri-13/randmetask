@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Assignment</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='result.css') }}">
+</head>
+<body>
+    <h2>Task Assignments</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Assigned To</th>
+                <th>Task</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for task, members in assignments.items() %}
+            <tr>
+                <td>{{ task }}</td>
+                <td>
+                    {% for member in members %}
+                        {{ member }}{% if not loop.last %}, {% endif %}
+                    {% endfor %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <br>
+    <div class="button-group">
+    <a href="{{ download_link }}" download class="btn">Download CSV</a>
+    <a href="/" class="btn">Upload Again</a>
+    </div>
+</body>
+</html>

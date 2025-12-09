@@ -1,0 +1,88 @@
+/* static/error.css – Beautiful, on-brand error page */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+  color: #334155;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+}
+
+.error-container {
+  text-align: center;
+  width: 100%;
+  max-width: 540px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 24px;
+  padding: 3.5rem 2.5rem;
+  box-shadow:
+    0 8px 32px rgba(124, 58, 237, 0.12),
+    0 25px 70px rgba(0, 0, 0, 0.08);
+  animation: floatIn 1s ease-out;
+}
+
+h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+  background: linear-gradient(90deg, #dc2626 0%, #ef4444 80%);
+  -webkit-background-clip-text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+p {
+  font-size: 1.15rem;
+  color: #64748b;
+  margin: 1.2rem 0 2.8rem;
+  line-height: 1.7;
+}
+
+/* Same exact button as upload & result pages */
+a {
+  display: inline-block;
+  padding: 1rem 2.4rem;
+  background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.35);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+a:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(124, 58, 237, 0.45);
+}
+
+a:active {
+  transform: translateY(-1px);
+}
+
+@keyframes floatIn {
+  from { opacity: 0; transform: translateY(30px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .error-container {
+    padding: 2.8rem 2rem;
+    border-radius: 20px;
+    margin: 1rem;
+  }
+  h2 { font-size: 2.1rem; }
+  p  { font-size: 1.05rem; }
+  a  { padding: 0.9rem 2.2rem; }
+}
